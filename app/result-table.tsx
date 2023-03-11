@@ -2,7 +2,9 @@ import { TableData } from './interface'
 
 interface ResultTableProps {
   tableData: TableData[]
-  searchParams: any
+  searchParams: {
+    search: string
+  }
 }
 
 export default function ResultTable({ tableData, searchParams }: ResultTableProps) {
