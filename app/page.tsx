@@ -3,12 +3,13 @@ import data from './data.json'
 export default async function Home({ searchParams }: { searchParams: { search: string } }) {
   const { data: tableData } = data
 
-  const searchString = searchParams.search
-
-  const filteredData = tableData.filter((data) => data.name.includes(searchString))
+  const filteredData =
+    tableData.filter((data) => data.name.toLowerCase().includes(searchParams.search)).length > 0
+      ? tableData.filter((data) => data.name.toLowerCase().includes(searchParams.search))
+      : tableData
 
   return (
-    <main className="p-12">
+    <main className="w-full">
       <section className="mt-12">
         <div className="relative overflow-x-auto min-w-[32rem]">
           <table className="w-full text-sm text-left text-gray-50">
