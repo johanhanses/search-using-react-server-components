@@ -4,8 +4,11 @@ export default async function Home({ searchParams }: { searchParams: { search: s
   const { data: tableData } = data
 
   const filteredData =
-    tableData.filter((data) => data.name.toLowerCase().includes(searchParams.search)).length > 0
-      ? tableData.filter((data) => data.name.toLowerCase().includes(searchParams.search))
+    tableData.filter((data) => data.name.toLowerCase().includes(searchParams.search.toLowerCase()))
+      .length > 0
+      ? tableData.filter((data) =>
+          data.name.toLowerCase().includes(searchParams.search.toLowerCase())
+        )
       : tableData
 
   return (
