@@ -1,7 +1,5 @@
 import data from './data.json'
 
-export const dynamic = 'force-dynamic'
-
 export default async function Home({ searchParams }: { searchParams: { search: string } }) {
   const { data: tableData } = data
 
