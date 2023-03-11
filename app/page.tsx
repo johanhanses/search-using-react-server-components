@@ -1,7 +1,7 @@
 import data from './data.json'
 import ResultTable from './result-table'
 
-export default async function Home({ searchParams }) {
+export default async function Home({ searchParams }: { searchParams: { search: string } }) {
   const { data: tableData } = data
 
   return (
