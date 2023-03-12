@@ -3,11 +3,20 @@ import data from './data.json'
 export default async function Home({ searchParams }: { searchParams: { search: string } }) {
   const { data: tableData } = data
 
+  console.log(searchParams.search)
+
   const filteredData =
-    tableData.filter((data) => data.name.toLowerCase().includes(searchParams.search?.toLowerCase()))
-      .length > 0
-      ? tableData.filter((data) =>
-          data.name.toLowerCase().includes(searchParams.search?.toLowerCase())
+    tableData.filter(
+      (data) =>
+        data.name.toLowerCase().includes(searchParams.search?.toLowerCase()) ||
+        data.id.toString().toLowerCase().includes(searchParams.search?.toLowerCase()) ||
+        data.email.toLowerCase().includes(searchParams.search?.toLowerCase())
+    ).length > 0 || searchParams.search
+      ? tableData.filter(
+          (data) =>
+            data.name.toLowerCase().includes(searchParams.search?.toLowerCase()) ||
+            data.id.toString().toLowerCase().includes(searchParams.search?.toLowerCase()) ||
+            data.email.toLowerCase().includes(searchParams.search?.toLowerCase())
         )
       : tableData
 
@@ -30,6 +39,12 @@ export default async function Home({ searchParams }: { searchParams: { search: s
                 >
                   Name
                 </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3"
+                >
+                  Email
+                </th>
               </tr>
             </thead>
             <tbody className="text-gray-700">
@@ -40,6 +55,7 @@ export default async function Home({ searchParams }: { searchParams: { search: s
                 >
                   <td className="px-6 py-4">{data.id}</td>
                   <td className="px-6 py-4">{data.name}</td>
+                  <td className="px-6 py-4">{data.email}</td>
                 </tr>
               ))}
             </tbody>

@@ -2,15 +2,38 @@
   "data": [
     {
       "id": 1,
-      "name": "Bengt Johnsson"
+      "name": "Bengt Johnsson",
+      "email": "bengt.johnsson@example.com"
     },
     {
       "id": 2,
-      "name": "Elis Olsson"
+      "name": "Elis Olsson",
+      "email": "elis.olsson@test.com"
     },
     {
       "id": 3,
-      "name": "Nils Johnsson"
+      "name": "Nils Johnsson",
+      "email": "nils.johnsson@example.com"
+    },
+    {
+      "id": 4,
+      "name": "Lillemor Svensson",
+      "email": "lillemor.svensson@test.com"
+    },
+    {
+      "id": 5,
+      "name": "Britt-Marie Gustavsson",
+      "email": "britt-marie.gustavsson@example.com"
+    },
+    {
+      "id": 6,
+      "name": "Lennart Nilsson",
+      "email": "lennart.nilsson@example.com"
+    },
+    {
+      "id": 7,
+      "name": "Fisk McFace",
+      "email": "fisk.mcface@example.com"
     }
   ]
 }
